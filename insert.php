@@ -3,12 +3,64 @@
 
 <head>
 	<title>Insert Page page</title>
+	<link href='https://fonts.googleapis.com/css?family=Gafata' rel='stylesheet'>  
 </head>
+  <style>
+      body
+        {
+          background-color: #9a9aaa;
+          font-family: 'Gafata';
+          padding-top: 5%;
+        }
+      div
+        {
+          background-color: #3d3846; 
+          width: 550px;
+          border-radius: 10px;
+          margin-top: 3%;
+          padding: 30px;
+          color: #fce6ea;
+          text-align:center;
+          margin: 20px auto 50px auto;
+          box-shadow: 5px 5px 10px #00000079;
+          font-size: 20px;
+          border: 2px solid white;
+
+        }  
+      p
+        {
+          text-align:center;
+        }  
+      input[type=submit]
+        {
+          width:186px;
+          padding: 7px;
+          background-color: #f5d8ded0;
+          border:none;
+          cursor: pointer;
+          font-family: 'Gafata';
+          font-size: 18px;
+          color: rgb(48, 38, 44);
+          box-shadow: 2px 2px 5px #00000079;
+          border-radius: 5px;
+
+          
+
+        }
+      input[type=submit]:hover
+        {
+          background-color: #ada9aad0;
+          color: #fce4e8; 
+        }
+
+
+
+  </style>
 
 <body>
 	<center>
 		<?php
-
+		echo "<div>";
 		// servername => localhost
 		// username => root
 		// password => ""
@@ -41,17 +93,20 @@
 			echo nl2br("\n$studentId \n $fullName \n "
 				. "$birthday \n $course \n $email");
 		} else{
-			echo "ERROR: Hush! Sorry $sql. "
+			echo "<b>ERROR:</b><br> Hush! Sorry $sql. "
 				. mysqli_error($conn);
 		}
 		
 		// Close connection
 		mysqli_close($conn);
+		echo "</div>";
 		?>
 	</center>
+	<p>
 	 <a href="http://localhost/index.php">
-     <input type="submit" value= "return"/>
+     <input type="submit" value= "Return"/>
    </a>
+	</p>
 </body>
 
 </html>
